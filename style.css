@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #302f2f;
+}
+.splash{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    background-color: #1d1c1ce1;
+}
+.btn{
+    background-color: #ffe92a;
+    color: #1d1c1c;
+    border: none;
+    width: 100px;
+    padding: 10px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+}
+.dash-bord{
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 1;
+    color: #ffe92a;
+}
+.rank{
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin: 15px 0;
+    border-bottom: 1px solid #ffe92a;
+}
+.dash-bord.extend{
+    display: flex;
+    flex-wrap: wrap;
+}
+.dash-bord.extend .rank{
+    border-bottom: transparent;
+    border-right: 1px solid #ffe92a;
+}
+main{
+    margin: auto;
+    width: 1000px;
+    padding-top: 20px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    color: #ffe92a;
+    padding: 20px;
+    background-color: #1d1c1c;
+    border: 3px solid #ffe92a;
+    font-size: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    gap: 20px;
+}
+.card-box{
+    width: 150px;
+    height: 150px;
+    border: 20px solid #1d1c1c;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+    transform-style:preserve-3d;
+    transform: rotateY(180deg);
+}
+.card-box.active{
+    transform: rotateY(0deg);
+}
+.card-box .front{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color:  #ffe92a;
+    backface-visibility: hidden;
+    position: absolute;
+}
+.card-box .Back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+}
+.card-box .Back::after{
+    content: "!";
+    color: #ffe92a;
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.win-fail{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #1d1c1cde;
+    text-align: center;
+    color: #ffe92a;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    flex-direction: column;
+}
